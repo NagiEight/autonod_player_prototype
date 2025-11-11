@@ -1,0 +1,88 @@
+[
+  {
+    "id": 1,
+    "type": "Start",
+    "data": {},
+    "position": {
+      "x": 275.8377670029791,
+      "y": 250.05611703370766
+    },
+    "connections": {
+      "in": [],
+      "out": [
+        4
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "type": "End",
+    "data": {},
+    "position": {
+      "x": 268.0298676790495,
+      "y": 37.64415152011509
+    },
+    "connections": {
+      "in": [
+        4
+      ],
+      "out": []
+    }
+  },
+  {
+    "id": 3,
+    "type": "End",
+    "data": {},
+    "position": {
+      "x": 317.4667583196549,
+      "y": 360.4170899027254
+    },
+    "connections": {
+      "in": [
+        5
+      ],
+      "out": []
+    }
+  },
+  {
+    "id": 4,
+    "type": "CheckTask",
+    "data": {
+      "process": "waterfox.exe",
+      "state": "running"
+    },
+    "position": {
+      "x": 171.5540528850422,
+      "y": 190.79374996524228
+    },
+    "connections": {
+      "in": [
+        1
+      ],
+      "out": [
+        5,
+        2
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "type": "LaunchApp",
+    "data": {
+      "path": "waterfox.exe",
+      "args": "youtube.com"
+    },
+    "position": {
+      "x": 280.8251210333079,
+      "y": 266.62852224383346
+    },
+    "connections": {
+      "in": [
+        4
+      ],
+      "out": [
+        3
+      ]
+    }
+  }
+]
