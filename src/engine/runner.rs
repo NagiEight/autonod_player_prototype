@@ -2,10 +2,8 @@ use crate::engine::node::Node;
 use crate::engine::types::Workflow;
 use crate::engine::utils::check_process_running;
 use serde_json::Value;
+use std::fs::File;
 use std::io::BufReader;
-use std::{ffi::OsStr, fs::File};
-
-use sysinfo::System;
 
 pub fn run_workflow_from_file(path: &str) {
     let file = File::open(path).expect("Failed to open workflow file");
@@ -93,21 +91,5 @@ pub fn run_workflow(workflow: Vec<Workflow>) {
             println!("Terminating due to missing connection");
             break;
         }
-    }
-}
-
-fn get_process_running(process_name: &str) -> bool {
-    let system = System::new_all();
-    let converted_process_name: &OsStr = &OsStr::new(process_name);
-
-    let is_running = system
-        .processes_by_name(converted_process_name)
-        .next()
-        .is_some();
-
-    if is_running {
-        return true;
-    } else {
-        return false;
     }
 }
